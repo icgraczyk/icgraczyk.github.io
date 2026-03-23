@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David Wegner — Western Water Collaborative</title>
+  <style>
+    :root{
+      --nav:#0f1830;
+      --text:#111;
+      --muted:#4d4d4d;
+      --max:980px;
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:#f7f7f7;
+    }
+    header{
+      background:var(--nav);
+      color:#fff;
+      padding:18px 16px;
+    }
+    header a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+    }
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:36px 16px 64px;
+    }
+    .bio{
+      background:#fff;
+      padding:28px;
+      border:1px solid #ddd;
+    }
+    .bio-header{
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:28px;
+      align-items:start;
+      margin-bottom:24px;
+    }
+    .bio-photo{
+      width:100%;
+      aspect-ratio:3 / 4;
+      overflow:hidden;
+      background:#eee;
+      border:1px solid #ccc;
+    }
+    .bio-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:42px;
+    }
+    .role{
+      margin:0;
+      color:var(--muted);
+      font-size:22px;
+    }
+    p{
+      font-size:20px;
+      line-height:1.7;
+      margin:0 0 20px;
+    }
+    @media (max-width: 720px){
+      .bio-header{ grid-template-columns:1fr; }
+      .bio-photo{ max-width:280px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Western Water Collaborative</a>
+  </header>
+
+  <main>
+    <div class="bio">
+      <div class="bio-header">
+        <div class="bio-photo">
+          <img src="Portrait_Placeholder_v3.png" alt="David Wegner portrait" />
+        </div>
+        <div>
+          <h1>David Wegner</h1>
+          <p class="role">Leadership</p>
+        </div>
+      </div>
+
+      <p>David Wegner is a Senior Strategic Consultant with Woolpert, an architecture, engineering, geospatial, and strategic consulting firm.</p>
+
+      <p>Wegner is a biological scientist based in Tucson, Ariz., and is a member of the Water Science and Technology Board of the National Academies of Sciences, Engineering, and Medicine.</p>
+
+      <p>He has served as senior principal investigator or the equivalent on dozens of water and environmental studies conducted on behalf of the U.S. Army Corps of Engineers Civil Works program and has provided scientific and engineering support as a member of the senior staff for the U.S. House of Representatives.</p>
+
+      <p>His oversight concerned the U.S. Environmental Protection Agency, the Department of the Interior, the Power Marketing Administrations within the Department of Energy, and the Natural Resources Conservation Service.</p>
+
+      <p>David is also on the External Advisory Committee for the Water Resources Research Center (WRRC) at the University of Arizona — part of the National Institutes for Water Resources (NIWR) network, which addresses water-related concerns for individual states and the nation.</p>
+    </div>
+  </main>
+</body>
+</html>

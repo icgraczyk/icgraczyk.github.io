@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Henry Graczyk — Western Water Collaborative</title>
+  <style>
+    :root{
+      --nav:#0f1830;
+      --text:#111;
+      --muted:#4d4d4d;
+      --max:980px;
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:#f7f7f7;
+    }
+    header{
+      background:var(--nav);
+      color:#fff;
+      padding:18px 16px;
+    }
+    header a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+    }
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:36px 16px 64px;
+    }
+    .bio{
+      background:#fff;
+      padding:28px;
+      border:1px solid #ddd;
+    }
+    .bio-header{
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:28px;
+      align-items:start;
+      margin-bottom:24px;
+    }
+    .bio-photo{
+      width:100%;
+      aspect-ratio:3 / 4;
+      overflow:hidden;
+      background:#eee;
+      border:1px solid #ccc;
+    }
+    .bio-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:42px;
+    }
+    .role{
+      margin:0;
+      color:var(--muted);
+      font-size:22px;
+    }
+    p{
+      font-size:20px;
+      line-height:1.7;
+      margin:0 0 20px;
+    }
+    @media (max-width: 720px){
+      .bio-header{ grid-template-columns:1fr; }
+      .bio-photo{ max-width:280px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Western Water Collaborative</a>
+  </header>
+
+  <main>
+    <div class="bio">
+      <div class="bio-header">
+        <div class="bio-photo">
+          <img src="Portrait_Placeholder_v5.png" alt="Henry Graczyk portrait" />
+        </div>
+        <div>
+          <h1>Henry Graczyk</h1>
+          <p class="role">Team</p>
+        </div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis viverra sem, a lacinia nisl. Duis condimentum pretium sodales. Cras sollicitudin sem ac risus auctor sodales. Nulla lectus lorem, pulvinar pharetra nisl quis, interdum auctor urna. Cras gravida vitae augue ac consequat. Nulla faucibus mollis pellentesque. Nulla et porta justo, a tincidunt ex. Aliquam quis lacus consectetur, ullamcorper purus nec, malesuada mi. Proin molestie nunc eget fringilla vestibulum. Sed nec nisi hendrerit, pellentesque ipsum vel, mollis dui. Nulla a erat sit amet arcu blandit vulputate.</p>
+    </div>
+  </main>
+</body>
+</html>

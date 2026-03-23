@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indrani Graczyk — Western Water Collaborative</title>
+  <style>
+    :root{
+      --nav:#0f1830;
+      --text:#111;
+      --muted:#4d4d4d;
+      --max:980px;
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:#f7f7f7;
+    }
+    header{
+      background:var(--nav);
+      color:#fff;
+      padding:18px 16px;
+    }
+    header a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+    }
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:36px 16px 64px;
+    }
+    .bio{
+      background:#fff;
+      padding:28px;
+      border:1px solid #ddd;
+    }
+    .bio-header{
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:28px;
+      align-items:start;
+      margin-bottom:24px;
+    }
+    .bio-photo{
+      width:100%;
+      aspect-ratio:3 / 4;
+      overflow:hidden;
+      background:#eee;
+      border:1px solid #ccc;
+    }
+    .bio-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:42px;
+    }
+    .role{
+      margin:0;
+      color:var(--muted);
+      font-size:22px;
+    }
+    p{
+      font-size:20px;
+      line-height:1.7;
+      margin:0 0 20px;
+    }
+    @media (max-width: 720px){
+      .bio-header{ grid-template-columns:1fr; }
+      .bio-photo{ max-width:280px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Western Water Collaborative</a>
+  </header>
+
+  <main>
+    <div class="bio">
+      <div class="bio-header">
+        <div class="bio-photo">
+          <img src="Portrait_Placeholder_v1.png" alt="Indrani Graczyk portrait" />
+        </div>
+        <div>
+          <h1>Indrani Graczyk</h1>
+          <p class="role">Founder and President</p>
+        </div>
+      </div>
+
+      <p>Indrani Graczyk is Founder and President of the Western Water Collaborative.</p>
+
+      <p>Previously she served various program management roles at NASA’s Jet Propulsion Laboratory. She led the Western Water Application Office, whose mission was to put NASA research, observations and technology to work in support of the unique water management challenges faced by the Western United States. She also ran the various programs overseeing commercial and international partnerships, technology transfer and the Small Business Innovative Research Program (SBIR) at JPL.</p>
+
+      <p>Before joining JPL, Ms. Graczyk worked as an engineer and developer of Micro-Electro Mechanical Systems (MEMS) devices. She also worked as a management consultant, where she analyzed market strategies for a variety of industries, including: Aerospace and Defense, Telecommunications, and Information Technology.</p>
+
+      <p>Ms. Graczyk holds a master’s degree in mechanical engineering from MIT, and an MBA from the Wharton School of Business.</p>
+    </div>
+  </main>
+</body>
+</html>

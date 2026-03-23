@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Western Water Collaborative</title>
+  <meta name="description" content="Western Water Collaborative — integrating Earth observations and basin-scale science to support informed water action across the West." />
+
+  <style>
+    :root{
+      --nav:#0f1830;
+      --nav2:#223a73;
+      --heroOverlay:rgba(0,0,0,0.38);
+      --ink:#111;
+      --paper:#ffffff;
+      --soft:#f2f2f2;
+      --muted:#4f4f4f;
+      --line:#000;
+      --max:1480px;
+      --gold:#f4b73a;
+      --teambg:#1e2b57;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+    }
+
+    a{ color:inherit; }
+
+    /* ===== HEADER ===== */
+    .topbar{
+      background:var(--nav);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:100;
+      overflow:visible;
+    }
+
+    .navwrap{
+      width:min(calc(100vw - 120px), var(--max));
+      margin:0 auto;
+      min-height:68px;
+      padding:8px 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      position:relative;
+    }
+
+    .logo{
+      position:absolute;
+      left:16px;
+      top:8px;
+      z-index:120;
+    }
+
+    .logo img{
+      width:118px;
+      height:auto;
+      display:block;
+      background:#fff;
+      padding:4px;
+      border-radius:0;
+      box-shadow:0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+      padding:8px 4px;
+      border-bottom:2px solid transparent;
+    }
+
+    nav a:hover{
+      border-bottom-color:rgba(255,255,255,0.85);
+    }
+
+    .donate{
+      position:absolute;
+      right:16px;
+      top:50%;
+      transform:translateY(-50%);
+    }
+
+    .donate a{
+      display:inline-block;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      padding:7px 12px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.22);
+      font-size:16px;
+    }
+
+    .donate a:hover{
+      background:rgba(255,255,255,0.22);
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      min-height:650px;
+      background:
+        linear-gradient(to bottom, var(--heroOverlay), rgba(0,0,0,0.50)),
+        url("Header_Image_Placeholder_v1.png");
+      background-size:cover;
+      background-position:center;
+      border-bottom:4px solid var(--nav);
+    }
+
+    .hero-inner{
+      width:min(calc(100vw - 120px), var(--max));
+      margin:0 auto;
+      min-height:540px;
+      padding:110px 0 36px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      gap:16px;
+    }
+
+    .hero h1{
+      margin:0;
+      color:#fff;
+      font-size:64px;
+      font-weight:500;
+      letter-spacing:0.2px;
+      text-shadow:0 3px 12px rgba(0,0,0,0.55);
+    }
+
+    .hero p{
+      margin:0;
+      color:#fff;
+      font-size:26px;
+      max-width:40ch;
+      text-shadow:0 3px 12px rgba(0,0,0,0.55);
+    }
+
+    /* ===== GENERAL ===== */
+    section{ scroll-margin-top:88px; }
+
+    .wrap{
+      width:min(calc(100vw - 120px), var(--max));
+      margin:0 auto;
+      padding-left:0;
+      padding-right:0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin:0 0 26px;
+      font-size:44px;
+      font-weight:700;
+      text-decoration:underline;
+      text-underline-offset:6px;
+    }
+
+    /* ===== MISSION ===== */
+    .mission{
+      background:#1e2f57;
+      color:#fff;
+      padding:56px 0 60px;
+      border-bottom:4px solid var(--nav);
+    }
+
+    .mission .copy{
+      font-size:24px;
+      line-height:1.5;
+      max-width:78ch;
+      margin:0 auto;
+    }
+
+    .mission .copy p{
+      margin:0 0 16px;
+    }
+
+    /* ===== WHAT WE DO ===== */
+    .what{
+      padding:54px 0;
+      background:#f3f4f6;
+      border-bottom:4px solid var(--line);
+    }
+
+    .what-text{
+      position:relative;
+      padding-left:18px;
+      border-left:3px solid var(--gold);
+    }
+
+    .what-text p{
+      margin:0 0 16px;
+      font-size:24px;
+      line-height:1.5;
+      max-width:72ch;
+    }
+
+    .what-text .dashlist{
+      margin:8px 0 18px 0;
+      padding:0;
+      list-style:none;
+    }
+
+    .what-text .dashlist li{
+      margin:12px 0;
+      font-size:24px;
+      line-height:1.5;
+    }
+
+    .what-text .dashlist li::before{
+      content:"— ";
+      font-weight:700;
+    }
+
+    .what-media{
+      float:right;
+      width:420px;
+      margin:30px 0 18px 42px;
+    }
+
+    .what-media img{
+      width:100%;
+      height:auto;
+      display:block;
+      border:3px solid rgba(0,0,0,0.18);
+      background:#fff;
+    }
+
+    /* ===== TEAM CAROUSEL ===== */
+    .team{
+      background:var(--teambg);
+      color:#fff;
+      padding:52px 0 66px;
+      border-bottom:4px solid var(--line);
+    }
+
+    .team .section-title{
+      color:#fff;
+      font-size:44px;
+      font-weight:700;
+      margin:0 0 26px;
+      text-decoration:underline;
+      text-underline-offset:6px;
+      text-align:center;
+    }
+
+    .carousel-shell{
+      position:relative;
+      max-width:960px;
+      margin:0 auto;
+      padding:0 44px;
+    }
+
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:34px;
+      height:90px;
+      border:none;
+      background:transparent;
+      color:#7d7d7d;
+      font-size:64px;
+      line-height:1;
+      cursor:pointer;
+      z-index:5;
+    }
+
+    .carousel-btn:hover{
+      color:#b0b0b0;
+    }
+
+    .carousel-btn.prev{ left:0; }
+    .carousel-btn.next{ right:0; }
+
+    .carousel-viewport{
+      overflow:hidden;
+      width:100%;
+    }
+
+    .carousel-track{
+      display:flex;
+      gap:56px;
+      transition:transform 0.35s ease;
+      will-change:transform;
+    }
+
+    .team-card{
+      flex:0 0 calc((100% - 112px) / 3);
+      text-align:center;
+    }
+
+    .team-card a{
+      text-decoration:none;
+      color:#fff;
+      display:block;
+    }
+
+    .team-photo{
+      width:100%;
+      aspect-ratio:3 / 4;
+      background:#ececec;
+      overflow:hidden;
+      margin-bottom:16px;
+    }
+
+    .team-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      background:#e8e8e8;
+    }
+
+    .team-name{
+      font-size:28px;
+      text-decoration:underline;
+      text-underline-offset:5px;
+      margin-bottom:4px;
+    }
+
+    .team-role{
+      font-size:18px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact{
+      padding:44px 0 64px;
+    }
+
+    .contact-card{
+      margin:0 auto;
+      background:var(--nav2);
+      color:#fff;
+      padding:18px;
+      border:3px solid var(--line);
+      text-align:center;
+    }
+
+    .contact-card .small{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .contact-card a{
+      color:#fff;
+      font-size:26px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .contact-card a:hover{
+      text-decoration:underline;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      background:var(--nav);
+      color:rgba(255,255,255,0.78);
+      padding:18px 16px;
+      font-size:14px;
+    }
+
+    footer .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px){
+      .logo img{ width:104px; }
+      .hero h1{ font-size:54px; }
+      .hero p{ font-size:24px; }
+    }
+
+    @media (max-width: 900px){
+      .navwrap{
+        width:min(calc(100vw - 24px), var(--max));
+        min-height:90px;
+        padding-top:12px;
+        padding-bottom:12px;
+      }
+
+      .logo{
+        position:static;
+      }
+
+      .donate{
+        position:static;
+        transform:none;
+      }
+
+      .navwrap{
+        flex-direction:column;
+      }
+
+      nav{
+        justify-content:center;
+      }
+
+      .what-media{
+        float:none;
+        width:100%;
+        max-width:420px;
+        margin:0 auto 24px;
+      }
+
+      .hero h1{ font-size:42px; }
+      .hero p{ font-size:20px; }
+
+      .team .section-title{
+        font-size:42px;
+      }
+
+      .carousel-shell{
+        padding:0 36px;
+      }
+
+      .carousel-track{
+        gap:28px;
+      }
+
+      .team-card{
+        flex:0 0 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="navwrap">
+      <div class="logo" aria-label="Western Water Collaborative logo">
+        <img src="Western_Water_Collaborative_logo_LowRes.png" alt="Western Water Collaborative logo" />
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="#mission">Our Mission</a>
+        <a href="#what">What We Do</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="donate">
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Header image and introduction">
+    <div class="hero-inner">
+      <h1>Western Water Collaborative</h1>
+      <p>Integrated science. Informed water action.</p>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div class="wrap">
+      <h2 class="section-title">Our Mission</h2>
+      <div class="copy">
+        <p>
+          The Western Water Collaborative integrates Earth observations and basin-scale science to support informed water action across the West.
+        </p>
+        <p>
+          We bring together satellite data, existing research, and water leaders to turn complex science into shared clarity for real-world decisions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="what" id="what">
+    <div class="wrap">
+      <h2 class="section-title">What We Do</h2>
+
+      <div class="what-text">
+        <div class="what-media">
+          <img src="What_We_Do_Image_Placeholder_v1.png" alt="What we do image" />
+        </div>
+
+        <p>
+          To support informed water action at basin scale across the western U.S., we:
+        </p>
+
+        <ul class="dashlist">
+          <li>Convene scientists, water managers, and agencies around real decision needs.</li>
+          <li>Integrate Earth observations and existing science to clarify risk, tradeoffs, and uncertainty.</li>
+          <li>Support the next generation of water leaders through mentored, applied work on real-world challenges.</li>
+        </ul>
+
+        <p>
+          We align the best available evidence with decision timelines—helping teams build shared understanding and move confidently from data to action.
+        </p>
+
+        <p>
+          Our work is practical and decision-focused—scoped to real choices, grounded in credible science, and built to move at the pace of water decisions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+  <div class="wrap">
+    <h2 class="section-title">Our Team</h2>
+
+    <div class="carousel-shell">
+      <button class="carousel-btn prev" id="prevBtn" aria-label="Previous team cards">&#8249;</button>
+
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="team-card">
+            <a href="indrani.html">
+              <div class="team-photo">
+                <img src="Portrait_Placeholder_v1.png" alt="Indrani Graczyk portrait" />
+              </div>
+              <div class="team-name">Indrani Graczyk</div>
+              <div class="team-role">Founder and President</div>
+            </a>
+          </div>
+
+          <div class="team-card">
+            <a href="stephanie.html">
+              <div class="team-photo">
+                <img src="Portrait_Placeholder_v2.png" alt="Stephanie Granger portrait" />
+              </div>
+              <div class="team-name">Stephanie Granger</div>
+              <div class="team-role">Director</div>
+            </a>
+          </div>
+
+          <div class="team-card">
+            <a href="david.html">
+              <div class="team-photo">
+                <img src="Portrait_Placeholder_v3.png" alt="David Wegner portrait" />
+              </div>
+              <div class="team-name">David Wegner</div>
+              <div class="team-role">Director</div>
+            </a>
+          </div>
+
+          <div class="team-card">
+            <a href="cyndi.html">
+              <div class="team-photo">
+                <img src="Portrait_Placeholder_v4.png" alt="Cyndi Johnson portrait" />
+              </div>
+              <div class="team-name">Cyndi Johnson</div>
+              <div class="team-role">Treasurer</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn next" id="nextBtn" aria-label="Next team cards">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="section-title">Contact Us</h2>
+
+      <div class="contact-card">
+        <p class="small">Got questions? Contact us here:</p>
+        <a href="mailto:info@westernwatercollaborative.org">info@westernwatercollaborative.org</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div> <span id="year"></span> Western Water Collaborative</div>
+      <div> </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const track = document.getElementById("carouselTrack");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let index = 0;
+
+    function visibleCards() {
+      return window.innerWidth <= 900 ? 1 : 3;
+    }
+
+    function totalCards() {
+      return track.children.length;
+    }
+
+    function maxIndex() {
+      return Math.max(0, totalCards() - visibleCards());
+    }
+
+    function updateCarousel() {
+      const cards = track.children;
+      if (!cards.length) return;
+
+      const firstCard = cards[0];
+      const trackStyle = window.getComputedStyle(track);
+      const gap = parseFloat(trackStyle.columnGap || trackStyle.gap || 0);
+      const cardWidth = firstCard.getBoundingClientRect().width;
+      const offset = index * (cardWidth + gap);
+
+      track.style.transform = `translateX(-${offset}px)`;
+
+      prevBtn.style.visibility = index <= 0 ? "hidden" : "visible";
+      nextBtn.style.visibility = index >= maxIndex() ? "hidden" : "visible";
+    }
+
+    prevBtn.addEventListener("click", () => {
+      index = Math.max(0, index - 1);
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      index = Math.min(maxIndex(), index + 1);
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", () => {
+      index = Math.min(index, maxIndex());
+      updateCarousel();
+    });
+
+    window.addEventListener("load", updateCarousel);
+  </script>
+</body>
+</html>
